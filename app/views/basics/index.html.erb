@@ -1,0 +1,31 @@
+<h1>Listing basics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Dashboard</th>
+      <th>Login</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @basics.each do |basic| %>
+      <tr>
+        <td><%= basic.index %></td>
+        <td><%= basic.dashboard %></td>
+        <td><%= basic.login %></td>
+        <td><%= link_to 'Show', basic %></td>
+        <td><%= link_to 'Edit', edit_basic_path(basic) %></td>
+        <td><%= link_to 'Destroy', basic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Basic', new_basic_path %>
